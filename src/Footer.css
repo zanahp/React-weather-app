@@ -1,0 +1,16 @@
+footer {
+  font-size: 12px;
+  margin-right: 20px;
+  text-align: right;
+}
+p {
+  margin: 0 auto;
+}
+.gitHub {
+  color: rgb(196, 82, 116);
+}
+.gitHub:hover {
+  cursor: default;
+  color: rgb(152, 185, 214);
+  text-decoration: none;
+}
