@@ -1,0 +1,11 @@
+input {
+  background: rgba(152, 185, 214, 0.5);
+  border: 3px solid black;
+  border-radius: 15px;
+  font-size: 20px;
+}
+button {
+  background: transparent;
+  border: none;
+  padding: 0 auto;
+}

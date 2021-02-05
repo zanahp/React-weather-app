@@ -7,9 +7,11 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App row container">
-      <Left />
-      <Right />
+    <div className="App">
+      <div className="container row">
+        <Left className = "col-6"/>
+        <Right className = "col-6"/>
+      </div>
       <Footer />
     </div>
   );

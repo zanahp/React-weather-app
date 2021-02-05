@@ -1,15 +1,19 @@
 import React from "react";
 
+import './Tomorrow.css';
+
 export default function Tomorrow() {
   return (
-    <div>
-      <div>Sunday</div>
-      <div>
+    <div className = "tomorrow row">
+      <div className = "col-sm dateTomorrow">Sunday</div>
+      <div className = "col-sm">
         <img src = "" alt = "weather icon" />
       </div>
-      <div>85°</div>
-      |
-      <div>75°</div>
+      <div className = "col-sm highLowTomorrow">
+        <span>85°</span>
+        |
+        <span>75°</span>
+      </div>  
     </div>
   );
 }

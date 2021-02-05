@@ -1,36 +1,37 @@
-import { func } from "prop-types";
 import React from "react";
+
+import './Today.css';
 
 export default function Today() {
   return (
-    <h1>
+    <h1 className = "today">
       <ul>
-        <li>Saturday, November 14</li>
+        <li className = "date">Saturday, November 14</li>
       <br />
-        <li>Miami</li>
+        <li className = "city">Miami</li>
         <li>
           <img src = "" alt = "wether icon" />
         </li>
         <li>
-          <span>85°</span>
+          <span className = "currentTemp">85°</span>
           <span>
-            <a href = "null">F</a>
+            <a href = "null" className = "active">F</a>
           </span>
           |
           <span>
-            <a href = "null">C</a>
+            <a href = "null" className = "active">C</a>
           </span>
         </li>
-        <li>
+        <li className = "highLowToday">
           <span>85°</span>
           <span>75°</span>
         </li>
       <br />
-        <li>
+        <li className = "sunriseSunset">
           <span>6:40AM</span>
-          <img src = "src/sunrise.svg" alt = "Sunrise" />
+          <img src = "./sunrise.svg" alt = "Sunrise" />
           |
-          <img src = "src/sunset.svg" alt = "Sunset" />
+          <img src = "./sunset.svg" alt = "Sunset" />
           <span>5:30PM</span>
         </li>
       </ul>
