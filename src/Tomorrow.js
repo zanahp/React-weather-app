@@ -4,7 +4,7 @@ import './Tomorrow.css';
 
 export default function Tomorrow() {
   return (
-    <div className = "tomorrow row">
+    <div className = "row tomorrow">
       <div className = "col-sm dateTomorrow">Sunday</div>
       <div className = "col-sm">
         <img src = "" alt = "weather icon" />

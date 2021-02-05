@@ -1,4 +1,6 @@
 import React from "react";
+import sunrise from './sunrise.svg';
+import sunset from './sunset.svg';
 
 import './Today.css';
 
@@ -29,9 +31,9 @@ export default function Today() {
       <br />
         <li className = "sunriseSunset">
           <span>6:40AM</span>
-          <img src = "./sunrise.svg" alt = "Sunrise" />
+          <img src = {sunrise} alt = "Sunrise" />
           |
-          <img src = "./sunset.svg" alt = "Sunset" />
+          <img src = {sunset} alt = "Sunset" />
           <span>5:30PM</span>
         </li>
       </ul>
