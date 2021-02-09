@@ -4,7 +4,7 @@ import Today from "./Today";
 
 export default function Left() {
   return (
-    <div>
+    <div className = "col-6">
       <Search />
       <Today />
     </div>

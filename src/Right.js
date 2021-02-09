@@ -4,7 +4,7 @@ import Forecast from "./Forecast";
 
 export default function Right() {
   return (
-    <div>
+    <div className = "col-6">
       <Tomorrow />
       <Forecast />
     </div>

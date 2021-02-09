@@ -5,7 +5,7 @@ import './Forecast.css';
 export default function Forecast() {
   return (
     <div className = "forecast row">
-      <div className = "col">
+      <div className = "col-6">
         <ul className = "weekday">
           <li>Monday</li>
           <li>
@@ -19,7 +19,7 @@ export default function Forecast() {
         </ul>
       </div>
 
-      <div className = "col">
+      <div className = "col-6">
         <ul className = "weekday">
           <li>Tuesday</li>
           <li>
@@ -33,7 +33,7 @@ export default function Forecast() {
         </ul>
       </div>
 
-      <div className = "col">
+      <div className = "col-6">
         <ul className = "weekday">
           <li>Wednesday</li>
           <li>
@@ -47,7 +47,7 @@ export default function Forecast() {
         </ul>
       </div>
 
-      <div className = "col">
+      <div className = "col-6">
         <ul className = "weekday">
           <li>Thursday</li>
           <li>
