@@ -6,10 +6,13 @@ export default function Footer() {
   return (
     <footer>
       <p>
-        <a href = "https://github.com/zanahp/Weather-app" className = "gitHub">
+        <a href = "https://github.com/zanahp/react-weather-app" target = "_blank" className = "links">
           Open-source code
         </a>
-        by Zanah Paret
+        {""} by {""} 
+        <a href = "www.linkedin.com/in/zanah-paret" target = "_blank" className = "links">
+        Zanah Paret
+        </a>
       </p>
     </footer>
   );

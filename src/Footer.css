@@ -6,10 +6,10 @@ footer {
 p {
   margin: 0 auto;
 }
-.gitHub {
+.links {
   color: rgb(196, 82, 116);
 }
-.gitHub:hover {
+.links:hover {
   cursor: default;
   color: rgb(152, 185, 214);
   text-decoration: none;
