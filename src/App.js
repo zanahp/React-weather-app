@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 import Left from "./Left";
 import Right from "./Right";

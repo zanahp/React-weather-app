@@ -6,7 +6,7 @@ export default function Left() {
   return (
     <div className = "col-6">
       <Search />
-      <Today />
+      <Today defaultCity = "Miami"/>
     </div>
   );
 }
