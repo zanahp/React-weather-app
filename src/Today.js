@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import DateFormat from "./DateFormat";
 import sunrise from './sunrise.svg';
 import sunset from './sunset.svg';
 
@@ -11,6 +12,7 @@ export default function Today(props) {
   function searchResponse(response) {
     setWeatherData( {
       complete: true,
+      date: new Date(response.data.dt * 1000),
       city: response.data.name,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       iconAltText: response.data.weather[0].description,
@@ -26,7 +28,9 @@ export default function Today(props) {
       return (
         <h1 className = "today">
           <ul>
-            <li className = "date">Saturday, November 14</li>
+            <li className = "date">
+             <DateFormat date = {weatherData.date}/>
+            </li>
           <br />
             <li className = "city">{weatherData.city}</li>
             <li>
