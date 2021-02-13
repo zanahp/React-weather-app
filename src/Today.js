@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import axios from "axios";
 import DateFormat from "./DateFormat";
+import Search from "./Search";
 import sunrise from './sunrise.svg';
 import sunset from './sunset.svg';
 
 import './Today.css';
 
-export default function Today(props) {
+export default function Today() {
   const [weatherData, setWeatherData] = useState({complete: false});
 
   function searchResponse(response) {
@@ -62,11 +62,7 @@ export default function Today(props) {
         </h1>
       );
     } else {
-      let apiKey = "bcfbf57b37e481face672611f0b20a2f";
-      let apiWeather = "https://api.openweathermap.org/data/2.5/weather?";
-      let apiWeatherUrl = `${apiWeather}q=${props.defaultCity}&units=imperial&appid=${apiKey}`;
-      axios.get(apiWeatherUrl).then(searchResponse);
-
+      Search();
       return "Loading. . .";
       }  
 }
