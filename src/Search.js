@@ -14,7 +14,7 @@ export default function Search(props) {
       ready: true,
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       iconAltText: response.data.weather[0].description,
       temp: Math.round(response.data.main.temp),
       high: Math.round(response.data.main.temp_max),

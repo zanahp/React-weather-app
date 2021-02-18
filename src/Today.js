@@ -1,5 +1,6 @@
 import React from "react";
 import DateFormat from "./DateFormat";
+import WeatherIcon from "./WeatherIcon";
 import sunrise from './sunrise.svg';
 import sunset from './sunset.svg';
 
@@ -14,9 +15,9 @@ export default function Today(props) {
             <DateFormat date = {props.data.date}/>
           </li>
         <br />
-          <li className = "city">{props.data.city}</li>
+          <li className = "city text-capitalize">{props.data.city}</li>
           <li>
-            <img src = {props.data.icon} alt = "wether icon" />
+            <WeatherIcon code={props.data.icon} />
           </li>
           <li>
             <span className = "currentTemp">{props.data.temp}°</span>
