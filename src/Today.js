@@ -1,6 +1,7 @@
 import React from "react";
 import DateFormat from "./DateFormat";
 import WeatherIcon from "./WeatherIcon";
+import TempToday from "./TempToday";
 import sunrise from './sunrise.svg';
 import sunset from './sunset.svg';
 
@@ -20,18 +21,10 @@ export default function Today(props) {
             <WeatherIcon code={props.data.icon} />
           </li>
           <li>
-            <span className = "currentTemp">{props.data.temp}°</span>
-            <span>
-              <a href = "null" className = "active">F</a>
-            </span>
-            |
-            <span>
-              <a href = "null" className = "active">C</a>
-            </span>
-          </li>
-          <li className = "highLowToday">
-            <span>{props.data.high}°</span>
-            <span>{props.data.low}°</span>
+            <TempToday 
+              fahrenheit = {props.data.temp} 
+              highF = {props.data.high}
+              lowF = {props.data.low} />
           </li>
         <br />
           <li className = "sunriseSunset">
