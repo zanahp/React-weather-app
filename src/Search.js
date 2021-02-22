@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Today from "./Today";
+import Forecast from "./Forecast";
 import axios from "axios";
 import button from "./button.svg";
 
@@ -20,7 +21,9 @@ export default function Search(props) {
       high: Math.round(response.data.main.temp_max),
       low: Math.round(response.data.main.temp_min),
       sunrise: (response.data.sys.sunrise + response.data.timezone),
-      sunset: (response.data.sys.sunset + response.data.timezone)
+      sunset: (response.data.sys.sunset + response.data.timezone),
+      lat: response.data.coord.lat,
+      lon: response.data.coord.lon
     });
   }
 
@@ -54,6 +57,7 @@ export default function Search(props) {
           </button> 
         </form>
         <Today data = {weatherData}/>
+        <Forecast lat = {weatherData.lat} lon = {weatherData.lon} unit = "fahrenheit" />
       </div>
     );
   } else {
