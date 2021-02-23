@@ -4,8 +4,6 @@ import WeatherIcon from "./WeatherIcon";
 import './Forecast.css';
 
 export default function ForecastTemp(props) {
-  const [unit, setUnit] = useState("fahrenheit");
-
   function day() {
     let date = new Date(props.data.dt * 1000);
     let days = [
@@ -22,7 +20,6 @@ export default function ForecastTemp(props) {
     return {day}; 
   }
   function highLowF() {
-  setUnit("fahrenheit");
   let highF = Math.round(props.data.temp.max);
   let lowF = Math.round(props.data.temp.min);
 
@@ -35,7 +32,6 @@ export default function ForecastTemp(props) {
   );
 }
 function highLowC() {
-  setUnit("celsius");
   let highC = Math.round((highLowF.highF - 32) * 5 / 9);
   let lowC = Math.round((highLowF.lowF - 32) * 5 / 9);
 
@@ -47,7 +43,7 @@ function highLowC() {
     </div>
   );
 }
-if (unit === "fahrenheit") {
+if (props.unit === "fahrenheit") {
   return (
     <div className = "forecast row">
       <div className = "col-6">

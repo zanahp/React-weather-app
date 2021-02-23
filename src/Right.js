@@ -6,7 +6,6 @@ export default function Right() {
   return (
     <div className = "col-6">
       <Tomorrow />
-      <Forecast />
     </div>
   );
 }

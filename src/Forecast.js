@@ -22,10 +22,10 @@ export default function Forecast(props) {
   if (loaded && props.lat === latitude) {
     return (
       <div>
-        <ForecastTemp data = {forecastAll[2]} />
-        <ForecastTemp data = {forecastAll[3]} />
-        <ForecastTemp data = {forecastAll[4]} />
-        <ForecastTemp data = {forecastAll[5]} />
+        <ForecastTemp data = {forecastAll[2]} unit = {props.unit} />
+        <ForecastTemp data = {forecastAll[3]} unit = {props.unit} />
+        <ForecastTemp data = {forecastAll[4]} unit = {props.unit} />
+        <ForecastTemp data = {forecastAll[5]} unit = {props.unit} />
       </div>
     );
   } else {
