@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import Forecast from "./Forecast";
 import WeatherIcon from "./WeatherIcon";
 
 import './Forecast.css';
 
-export default function Forecast(props) {
+export default function ForecastTemp(props) {
   const [unit, setUnit] = useState("fahrenheit");
 
   function day() {
@@ -24,8 +23,8 @@ export default function Forecast(props) {
   }
   function highLowF() {
   setUnit("fahrenheit");
-  let highF = Math.round(props.forecast.temp.max);
-  let lowF = Math.round(props.forecast.temp.min);
+  let highF = Math.round(props.data.temp.max);
+  let lowF = Math.round(props.data.temp.min);
 
   return (
     <div>
@@ -37,8 +36,8 @@ export default function Forecast(props) {
 }
 function highLowC() {
   setUnit("celsius");
-  let highC = Math.round((highF - 32) * 5 / 9);
-  let lowC = Math.round((lowF - 32) * 5 / 9);
+  let highC = Math.round((highLowF.highF - 32) * 5 / 9);
+  let lowC = Math.round((highLowF.lowF - 32) * 5 / 9);
 
   return (
     <div>

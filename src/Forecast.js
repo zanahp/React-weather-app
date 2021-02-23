@@ -1,15 +1,15 @@
 import React, { useState } from "react";
+import ForecastTemp from "./ForecastTemp";
 import axios from "axios";
 
-export default function ForecastTemp(props) {
+export default function Forecast(props) {
   const [loaded, setLoaded] = useState(false);
-  const [forecast, setForecast] = useState(null);
+  const [forecastAll, setForecastAll] = useState(null);
+  const [latitude, setLatitude] = useState(null);
 
   function forecastResponse(response) {
-    setForecast({
-      daily: response.data.daily,
-      lat: response.data.lat,
-    });
+    setLatitude(response.data.lat);
+    setForecastAll(response.data.daily);
     setLoaded(true);
   }
   function apiSearch() {
@@ -19,13 +19,13 @@ export default function ForecastTemp(props) {
     axios.get(apiUrlForecast).then(forecastResponse);
   }
 
-  if (loaded && props.lat === forecast.lat) {
+  if (loaded && props.lat === latitude) {
     return (
       <div>
-        <ForecastTemp data = {forecast[2]} />
-        <ForecastTemp data = {forecast[3]} />
-        <ForecastTemp data = {forecast[4]} />
-        <ForecastTemp data = {forecast[5]} />
+        <ForecastTemp data = {forecastAll[2]} />
+        <ForecastTemp data = {forecastAll[3]} />
+        <ForecastTemp data = {forecastAll[4]} />
+        <ForecastTemp data = {forecastAll[5]} />
       </div>
     );
   } else {
