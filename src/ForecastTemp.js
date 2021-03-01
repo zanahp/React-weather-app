@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import WeatherIcon from "./WeatherIcon";
 
 import './Forecast.css';
@@ -17,7 +17,7 @@ export default function ForecastTemp(props) {
     ];
     let day = days[date.getDay()];
 
-    return {day}; 
+    return day; 
   }
   function highLowF() {
   let highF = Math.round(props.data.temp.max);

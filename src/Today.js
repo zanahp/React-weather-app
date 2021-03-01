@@ -2,8 +2,7 @@ import React from "react";
 import DateFormat from "./DateFormat";
 import WeatherIcon from "./WeatherIcon";
 import TempToday from "./TempToday";
-import sunrise from './sunrise.svg';
-import sunset from './sunset.svg';
+import TimeFormat from "./TimeFormat";
 
 import './Today.css';
 
@@ -28,11 +27,9 @@ export default function Today(props) {
           </li>
         <br />
           <li className = "sunriseSunset">
-            <span>{props.data.sunrise}AM</span>
-            <img src = {sunrise} alt = "Sunrise" />
-            |
-            <img src = {sunset} alt = "Sunset" />
-            <span>{props.data.sunset}PM</span>
+            <TimeFormat 
+              sunrise = {props.data.sunrise} 
+              sunset = {props.data.sunset} />
           </li>
         </ul>
       </h1>
