@@ -1,19 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import TomorrowTemp from "./TomorrowTemp";
+import axios from "axios";
 
-import './Tomorrow.css';
+export default function Tomorrow(props) {
+  const [loaded, setLoaded] = useState(false);
+  const [tomorrow, setTomorrow] = useState(null);
 
-export default function Tomorrow() {
-  return (
-    <div className = "row tomorrow">
-      <div className = "col-sm dateTomorrow">Sunday</div>
-      <div className = "col-sm">
-        <img src = "" alt = "weather icon" />
+  function tomorrowResponse(response) {
+    setTomorrow(response.data);
+    setLoaded(true);
+  }
+  function apiSearch() {
+    let unit = "imperial";
+    let apiKey = "bcfbf57b37e481face672611f0b20a2f";
+    let apiForecast = "https://api.openweathermap.org/data/2.5/onecall?"
+    let apiUrlForecast = `${apiForecast}lat=${props.lat}&lon=${props.lon}&units=${unit}&appid=${apiKey}&exclude=currently,minutely,hourly,alert`;
+    axios.get(apiUrlForecast).then(tomorrowResponse);
+  }
+
+  if (loaded && props.lat === tomorrow.lat 
+      && props.lon === tomorrow.lon) {
+    return (
+      <div>
+        <TomorrowTemp data = {tomorrow.daily[1]} unit = "imperial" />
       </div>
-      <div className = "col-sm highLowTomorrow">
-        <span>85°</span>
-        |
-        <span>75°</span>
-      </div>  
-    </div>
-  );
+    );
+  } else {
+    apiSearch();
+
+    return null;
+  }
 }

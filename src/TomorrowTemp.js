@@ -1,13 +1,11 @@
-///ForecastTemp
-
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
 
-import './Forecast.css';
+import './Tomorrow.css';
 
-export default function ForecastTemp(props) {
+export default function TomorrowTemp(props) {
   const unit = "imperial";
-
+  
   function day() {
     let date = new Date(props.data.dt * 1000);
     let days = [
@@ -42,39 +40,31 @@ export default function ForecastTemp(props) {
 
   if (unit === props.unit) {
     return (
-      <div className = "row forecast">
-        <div className = "col-6">
-          <ul className = "weekday">
-            <li>{day()}</li>
-            <li>
-              <WeatherIcon code={props.data.weather[0].icon} />
-            </li>
-            <li>
-              <span>{highF()}°</span>
-              |
-              <span>{lowF()}°</span>
-            </li>
-          </ul>
+      <div className = "row tomorrow">
+        <div className = "col-sm dateTomorrow">{day()}</div>
+        <div className = "col-sm">
+          <WeatherIcon code={props.data.weather[0].icon} />
         </div>
+        <div className = "col-sm highLowTomorrow">
+          <span>{highF()}°</span>
+          |
+          <span>{lowF()}°</span>
+        </div>  
       </div>
-    );
+    ); 
   } else {
     return (
-      <div className = "forecast row">
-        <div className = "col-6">
-          <ul className = "weekday">
-            <li>{day()}</li>
-            <li>
-              <WeatherIcon code={props.data.weather[0].icon} />
-            </li>
-            <li>
-              <span>{highC()}°</span>
-              |
-              <span>{lowC()}°</span>
-            </li>
-          </ul>
+      <div className = "row tomorrow">
+        <div className = "col-sm dateTomorrow">{day()}</div>
+        <div className = "col-sm">
+          <WeatherIcon code={props.data.weather[0].icon} />
         </div>
+        <div className = "col-sm highLowTomorrow">
+          <span>{highC()}°</span>
+          |
+          <span>{lowC()}°</span>
+        </div>  
       </div>
-    );
+    ); 
   }
 }

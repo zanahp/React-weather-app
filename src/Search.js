@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Today from "./Today";
+import Tomorrow from "./Tomorrow";
 import Forecast from "./Forecast";
 import axios from "axios";
 import button from "./button.svg";
@@ -45,7 +46,8 @@ export default function Search(props) {
 
    if (weatherData.ready) {
     return (
-      <div>
+      <div className = "row">
+      <div className = "col-6">
         <form onSubmit = {handleSubmit}>
           <input  className = "col-10" 
                   type = "text" 
@@ -57,7 +59,11 @@ export default function Search(props) {
           </button> 
         </form>
         <Today data = {weatherData} />
+      </div>
+      <div className = "col-6">
+        <Tomorrow lat = {weatherData.lat} lon = {weatherData.lon} />
         <Forecast lat = {weatherData.lat} lon = {weatherData.lon} />
+      </div>
       </div>
     );
   } else {

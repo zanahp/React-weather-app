@@ -1,7 +1,7 @@
 import React from "react";
 import DateFormat from "./DateFormat";
 import WeatherIcon from "./WeatherIcon";
-import TempToday from "./TempToday";
+import TodayTemp from "./TodayTemp";
 import TimeFormat from "./TimeFormat";
 
 import './Today.css';
@@ -20,7 +20,7 @@ export default function Today(props) {
             <WeatherIcon code={props.data.icon} />
           </li>
           <li>
-            <TempToday 
+            <TodayTemp 
               fahrenheit = {props.data.temp} 
               highF = {props.data.high}
               lowF = {props.data.low} />

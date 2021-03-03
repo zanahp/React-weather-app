@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function TempToday(props) {
+export default function TodayTemp(props) {
   const [unit, setUnit] = useState("fahrenheit");
 
   function showF(event) {

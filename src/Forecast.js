@@ -24,10 +24,14 @@ export default function Forecast(props) {
       && props.lon === forecast.lon) {
     return (
       <div>
+      <div className = "row">
         <ForecastTemp data = {forecast.daily[2]} unit = "imperial"/>
         <ForecastTemp data = {forecast.daily[3]} unit = "imperial"/>
+      </div>
+      <div className = "row">
         <ForecastTemp data = {forecast.daily[4]} unit = "imperial"/>
         <ForecastTemp data = {forecast.daily[5]} unit = "imperial"/>
+      </div>
       </div>
     );
   } else {
