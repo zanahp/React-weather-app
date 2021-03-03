@@ -9,7 +9,6 @@ import './Search.css';
 export default function Search(props) {
   const [weatherData, setWeatherData] = useState({ready: false});
   const [city, setCity] = useState(props.defaultCity);
-  const [unit, setUnit] = useState("fahrenheit");
 
   function searchResponse(response) {
     setWeatherData( {
@@ -57,8 +56,8 @@ export default function Search(props) {
                   alt = "search button" />
           </button> 
         </form>
-        <Today data = {weatherData} unit = {unit} setUnit = {setUnit}/>
-        <Forecast lat = {weatherData.lat} lon = {weatherData.lon} unit = {unit} />
+        <Today data = {weatherData} />
+        <Forecast lat = {weatherData.lat} lon = {weatherData.lon} />
       </div>
     );
   } else {

@@ -1,9 +1,13 @@
+///ForecastTemp
+
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
 
 import './Forecast.css';
 
 export default function ForecastTemp(props) {
+  const unit = "imperial";
+
   function day() {
     let date = new Date(props.data.dt * 1000);
     let days = [
@@ -19,31 +23,24 @@ export default function ForecastTemp(props) {
 
     return day; 
   }
-  function highLowF() {
-  let highF = Math.round(props.data.temp.max);
+  function highF() {
+    let highF = Math.round(props.data.temp.max);
+    return `${highF}`;
+  }
+  function lowF() {
   let lowF = Math.round(props.data.temp.min);
+  return `${lowF}`;
+  }
+  function highC() {
+    let highC = Math.round((highF - 32) * 5 / 9);
+    return `${highC}`;
+  }
+  function lowC() {
+    let lowC = Math.round((lowF - 32) * 5 / 9);
+    return `${lowC}`;
+  }
 
-  return (
-    <div>
-      <span>{highF}°</span>
-        |
-      <span>{lowF}°</span>
-    </div>
-  );
-}
-function highLowC() {
-  let highC = Math.round((highLowF.highF - 32) * 5 / 9);
-  let lowC = Math.round((highLowF.lowF - 32) * 5 / 9);
-
-  return (
-    <div>
-      <span>{highC}°</span>
-        |
-      <span>{lowC}°</span>
-    </div>
-  );
-}
-if (props.unit === "fahrenheit") {
+if (unit === props.unit) {
   return (
     <div className = "forecast row">
       <div className = "col-6">
@@ -53,7 +50,9 @@ if (props.unit === "fahrenheit") {
             <WeatherIcon code={props.data.weather[0].icon} />
           </li>
           <li>
-            {highLowF}
+            <span>{highF()}°</span>
+            |
+            <span>{lowF()}°</span>
           </li>
         </ul>
       </div>
@@ -69,7 +68,9 @@ if (props.unit === "fahrenheit") {
             <WeatherIcon code={props.data.weather[0].icon} />
           </li>
           <li>
-            {highLowC}
+             <span>{highC()}°</span>
+            |
+            <span>{lowC()}°</span>
           </li>
         </ul>
       </div>

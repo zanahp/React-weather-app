@@ -5,14 +5,14 @@ export default function TempToday(props) {
 
   function showF(event) {
     event.preventDefault();
-    props.setUnit("fahrenheit");
+    setUnit("fahrenheit");
   }
   function showC(event) {
     event.preventDefault();
-    props.setUnit("celsius");
+    setUnit("celsius");
   }
   function celsius() {
-    return (props.fahrenheit - 32) * 5 / 9;
+    return Math.round((props.fahrenheit - 32) * 5 / 9);
   }
   function highC() {
     return Math.round((props.highF - 32) * 5 / 9);
@@ -21,7 +21,7 @@ export default function TempToday(props) {
     return Math.round((props.lowF - 32) * 5 / 9);
   }
 
-  if (props.unit === "fahrenheit") {
+  if (unit === "fahrenheit") {
     return (
     <div>
       <li>
