@@ -10,6 +10,7 @@ import './Search.css';
 export default function Search(props) {
   const [weatherData, setWeatherData] = useState({ready: false});
   const [city, setCity] = useState(props.defaultCity);
+  const [unit, setUnit] = useState("imperial");
 
   function searchResponse(response) {
     setWeatherData( {
@@ -31,7 +32,7 @@ export default function Search(props) {
   function search() {
     const apiKey = "bcfbf57b37e481face672611f0b20a2f";
     const apiWeather = "https://api.openweathermap.org/data/2.5/weather?";
-    let apiWeatherUrl = `${apiWeather}q=${city}&units=imperial&appid=${apiKey}`;
+    let apiWeatherUrl = `${apiWeather}q=${city}&units=${unit}&appid=${apiKey}`;
     axios.get(apiWeatherUrl).then(searchResponse);
   }
 
@@ -58,11 +59,20 @@ export default function Search(props) {
                   alt = "search button" />
           </button> 
         </form>
-        <Today data = {weatherData} />
+        <Today 
+          data = {weatherData}
+          unit = {unit}
+          setUnit = {setUnit} />
       </div>
       <div className = "col-6">
-        <Tomorrow lat = {weatherData.lat} lon = {weatherData.lon} />
-        <Forecast lat = {weatherData.lat} lon = {weatherData.lon} />
+        <Tomorrow 
+          lat = {weatherData.lat} 
+          lon = {weatherData.lon} 
+          unit = {unit} />
+        <Forecast 
+          lat = {weatherData.lat} 
+          lon = {weatherData.lon} 
+          unit = {unit} />
       </div>
       </div>
     );

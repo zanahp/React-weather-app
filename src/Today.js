@@ -23,7 +23,9 @@ export default function Today(props) {
             <TodayTemp 
               fahrenheit = {props.data.temp} 
               highF = {props.data.high}
-              lowF = {props.data.low} />
+              lowF = {props.data.low}
+              unit = {props.unit}
+              setUnit = {props.setUnit} />
           </li>
         <br />
           <li className = "sunriseSunset">

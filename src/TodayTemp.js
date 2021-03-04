@@ -1,27 +1,19 @@
 import React, { useState } from "react";
 
 export default function TodayTemp(props) {
-  const [unit, setUnit] = useState("fahrenheit");
-
   function showF(event) {
     event.preventDefault();
-    setUnit("fahrenheit");
+    props.setUnit("imperial");
   }
   function showC(event) {
     event.preventDefault();
-    setUnit("celsius");
+    props.setUnit("metric");
   }
-  function celsius() {
-    return Math.round((props.fahrenheit - 32) * 5 / 9);
-  }
-  function highC() {
-    return Math.round((props.highF - 32) * 5 / 9);
-  }
-  function lowC() {
-    return Math.round((props.lowF - 32) * 5 / 9);
-  }
-
-  if (unit === "fahrenheit") {
+  let celsius = Math.round((props.fahrenheit - 32) * 5 / 9);
+  let highC = Math.round((props.highF - 32) * 5 / 9);
+  let lowC = Math.round((props.lowF - 32) * 5 / 9);
+  
+  if (props.unit === "imperial") {
     return (
     <div>
       <li>
@@ -40,14 +32,14 @@ export default function TodayTemp(props) {
     return (
       <div>
       <li>
-        <span className = "currentTemp">{celsius()}°</span>
+        <span className = "currentTemp">{celsius}°</span>
           <a href = "null" className = "active" onClick = {showF}>F</a>
           | 
           <span className = "active">C</span> 
       </li>
       <li className = "highLowToday">
-        <span>{highC()}°</span>
-        <span>{lowC()}°</span>
+        <span>{highC}°</span>
+        <span>{lowC}°</span>
       </li>
     </div> 
     );
