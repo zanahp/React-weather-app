@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function TodayTemp(props) {
   function showF(event) {
@@ -15,33 +15,35 @@ export default function TodayTemp(props) {
   
   if (props.unit === "imperial") {
     return (
-    <div>
-      <li>
-        <span className = "currentTemp">{props.fahrenheit}°</span>
-        <span className = "active">F</span>
-        |
-        <a href = "null" className = "active" onClick = {showC}>C</a>
-      </li>
-      <li className = "highLowToday">
-        <span>{props.highF}°</span>
-        <span>{props.lowF}°</span>
-      </li>
-    </div>  
+      <div>
+        <li>
+          <span className = "currentTemp">{props.fahrenheit}°</span>
+          <span className = "active">F</span>
+          |
+          <a href = "null" className = "active" onClick = {showC}>C</a>
+        </li>
+        <li className = "highLowToday">
+          <span>{props.highF}°</span>
+          {" "}|{" "}
+          <span>{props.lowF}°</span>
+        </li>
+      </div>  
     );
   } else {
     return (
       <div>
-      <li>
-        <span className = "currentTemp">{celsius}°</span>
-          <a href = "null" className = "active" onClick = {showF}>F</a>
-          | 
-          <span className = "active">C</span> 
-      </li>
-      <li className = "highLowToday">
-        <span>{highC}°</span>
-        <span>{lowC}°</span>
-      </li>
-    </div> 
+        <li>
+          <span className = "currentTemp">{celsius}°</span>
+            <a href = "null" className = "active" onClick = {showF}>F</a>
+            | 
+            <span className = "active">C</span> 
+        </li>
+        <li className = "highLowToday">
+          <span>{highC}°</span>
+          {" "}|{" "}
+          <span>{lowC}°</span>
+        </li>
+      </div> 
     );
   }
 }

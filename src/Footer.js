@@ -9,7 +9,7 @@ export default function Footer() {
         <a href = "https://github.com/zanahp/react-weather-app" target = "_blank" className = "links">
           Open-source code
         </a>
-        {""} by {""} 
+        {" "} by {" "} 
         <a href = "www.linkedin.com/in/zanah-paret" target = "_blank" className = "links">
         Zanah Paret
         </a>

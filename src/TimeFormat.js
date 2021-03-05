@@ -10,13 +10,13 @@ export default function TimeFormat(props) {
       if (hour < 10) {
         hour = `0${hour}`;
       } else { 
-        hour = hour; 
+        hour = `${hour}`; 
       }
     let minutes = day.getUTCMinutes();
       if (minutes < 10) {
         minutes = `0${minutes}`;
       } else {
-        minutes = minutes;
+        minutes = `${minutes}`;
       }
     return `${hour}:${minutes}`;  
   }
@@ -26,7 +26,7 @@ export default function TimeFormat(props) {
       <span>{time(props.sunrise)}AM</span>
       {" "}
       <img src = {sunrise} alt = "Sunrise" />
-      |
+      {" "}|{" "}
       <img src = {sunset} alt = "Sunset" />
       {" "}
       <span>{time(props.sunset)}PM</span>

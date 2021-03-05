@@ -21,14 +21,14 @@ export default function Forecast(props) {
       && props.lon === forecast.lon) {
     return (
       <div>
-      <div className = "row">
-        <ForecastTemp data = {forecast.daily[2]} unit = {props.unit}/>
-        <ForecastTemp data = {forecast.daily[3]} unit = {props.unit}/>
-      </div>
-      <div className = "row">
-        <ForecastTemp data = {forecast.daily[4]} unit = {props.unit}/>
-        <ForecastTemp data = {forecast.daily[5]} unit = {props.unit}/>
-      </div>
+        <div className = "row">
+          <ForecastTemp data = {forecast.daily[2]} unit = {props.unit}/>
+          <ForecastTemp data = {forecast.daily[3]} unit = {props.unit}/>
+        </div>
+        <div className = "row">
+          <ForecastTemp data = {forecast.daily[4]} unit = {props.unit}/>
+          <ForecastTemp data = {forecast.daily[5]} unit = {props.unit}/>
+        </div>
       </div>
     );
   } else {

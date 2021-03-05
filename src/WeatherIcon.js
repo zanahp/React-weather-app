@@ -41,6 +41,6 @@ export default function WeatherIcon(props) {
   };
 
   return (
-  <div>{codeMap[props.code]}</div>
+    <div>{codeMap[props.code]}</div>
   );
 }

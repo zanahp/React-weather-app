@@ -28,38 +28,34 @@ export default function ForecastTemp(props) {
 
   if (props.unit === "imperial") {
     return (
-      <div className = "row forecast">
-        <div className = "col-6">
-          <ul className = "weekday">
-            <li>{day()}</li>
-            <li>
-              <WeatherIcon code={props.data.weather[0].icon} />
-            </li>
-            <li>
-              <span>{highF}°</span>
-              |
-              <span>{lowF}°</span>
-            </li>
-          </ul>
-        </div>
+      <div className = "col-6">
+        <ul className = "weekday">
+          <li>{day()}</li>
+          <li>
+            <WeatherIcon code={props.data.weather[0].icon} />
+          </li>
+          <li>
+            <span>{highF}°</span>
+            {" "}|{" "}
+            <span>{lowF}°</span>
+          </li>
+        </ul>
       </div>
     );
   } else {
     return (
-      <div className = "forecast row">
-        <div className = "col-6">
-          <ul className = "weekday">
-            <li>{day()}</li>
-            <li>
-              <WeatherIcon code={props.data.weather[0].icon} />
-            </li>
-            <li>
-              <span>{highC}°</span>
-              |
-              <span>{lowC}°</span>
-            </li>
-          </ul>
-        </div>
+      <div className = "col-6">
+        <ul className = "weekday">
+          <li>{day()}</li>
+          <li>
+            <WeatherIcon code={props.data.weather[0].icon} />
+          </li>
+          <li>
+            <span>{highC}°</span>
+            {" "}|{" "}
+            <span>{lowC}°</span>
+          </li>
+        </ul>
       </div>
     );
   }

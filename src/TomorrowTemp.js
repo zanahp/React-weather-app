@@ -33,7 +33,7 @@ export default function TomorrowTemp(props) {
         </div>
         <div className = "col-sm highLowTomorrow">
           <span>{highF}°</span>
-          |
+          {" "}|{" "}
           <span>{lowF}°</span>
         </div>  
       </div>
@@ -47,7 +47,7 @@ export default function TomorrowTemp(props) {
         </div>
         <div className = "col-sm highLowTomorrow">
           <span>{highC}°</span>
-          |
+          {" "}|{" "}
           <span>{lowC}°</span>
         </div>  
       </div>
