@@ -34,6 +34,6 @@ export default function Forecast(props) {
   } else {
     apiSearch();
 
-    return null;
+    return "Loading. . .";
   }
 }

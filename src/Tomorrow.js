@@ -27,6 +27,6 @@ export default function Tomorrow(props) {
   } else {
     apiSearch();
 
-    return null;
+    return "Loading. . .";
   }
 }

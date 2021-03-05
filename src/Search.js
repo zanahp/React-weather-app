@@ -45,7 +45,7 @@ export default function Search(props) {
   if (weatherData.ready) {
     return (
       <div className = "row">
-        <div className = "col-6">
+        <div className = "col-6 columns">
           <form onSubmit = {handleSubmit}>
             <input  className = "col-10" 
                     type = "text" 
@@ -61,7 +61,7 @@ export default function Search(props) {
             unit = {unit}
             setUnit = {setUnit} />
         </div>
-        <div className = "col-6">
+        <div className = "col-6 columns">
           <Tomorrow 
             lat = {weatherData.lat} 
             lon = {weatherData.lon} 

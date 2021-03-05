@@ -1,5 +1,5 @@
 import React from "react";
-import WeatherIcon from "./WeatherIcon";
+import WeatherIcon2 from "./WeatherIcon2";
 
 import './Forecast.css';
 
@@ -32,7 +32,7 @@ export default function ForecastTemp(props) {
         <ul className = "weekday">
           <li>{day()}</li>
           <li>
-            <WeatherIcon code={props.data.weather[0].icon} />
+            <WeatherIcon2 code={props.data.weather[0].icon} />
           </li>
           <li>
             <span>{highF}°</span>
@@ -48,7 +48,7 @@ export default function ForecastTemp(props) {
         <ul className = "weekday">
           <li>{day()}</li>
           <li>
-            <WeatherIcon code={props.data.weather[0].icon} />
+            <WeatherIcon2 code={props.data.weather[0].icon} />
           </li>
           <li>
             <span>{highC}°</span>
