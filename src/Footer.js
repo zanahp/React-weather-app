@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer>
       <p>
-        <a href = "https://github.com/zanahp/react-weather-app" target = "_blank" className = "links">
+        <a href = "https://github.com/zanahp/react-weather-app" target = "_blank" className = "links" rel="noreferrer">
           Open-source code
         </a>
         {" "} by {" "} 
